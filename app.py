@@ -1,25 +1,27 @@
 import os
+import dbms
 
 tasks=[]
+
 def load_tasks():
-    global tasks
     print("loading tasks")
-    with open("tasks.txt", "r") as f:
-        for line in f:
-            line = line.split("%%%")
-            task={"task": f"{line[0]}", "completed": eval(line[1])}
+    data = dbms.get()
+    if data == None:
+        return
+    else:
+        for line in data:
+            task={"task": f"{line[0]}", "completed": line[1]}
             tasks.append(task)
 
-
 def save_tasks():
-    open('tasks.txt', 'w').close()
-    
-    f=open("tasks.txt","a")
-    for task in tasks:
-        # f.write(f'{task}\n')
-        f.write(f'{task['task']}%%%{task["completed"]}\n')
+    if not(dbms.ifExcist()):
+        dbms.createTable()
         
-    f.close()
+    dbms.emptyTable()
+    
+    for task in tasks:
+        dbms.insert(task['task'], task['completed'])
+        
 def add_task():
     task = input("Enter task: ")
     task={"task": f"{task}", "completed": False}
