@@ -36,11 +36,7 @@ A simple command-line task management application in Python that allows you to a
 
 ## File Storage
 
-Tasks are stored in a text file named `tasks.txt`. Each task is saved in the format:
-```
-task_name%%%completed_status
-```
-Where `completed_status` is a boolean value (`True` or `False`).
+Tasks are stored in Sqlite database 
 
 ## Contributing
 
