@@ -22,11 +22,11 @@ A task management application built with Python and Flask that allows users to m
 1.  **Clone the repository** or download the project files.
 2.  **Install Flask**:
     ```
-    `pip install flask` 
+    pip install flask
     ```
 3.  **Run the web application**
     ```
-    `python main.py` 
+    python main.py
     ```
 5.  **Access the app**: Open your browser and go to `http://127.0.0.1:5000` to manage tasks in the web interface.
 
