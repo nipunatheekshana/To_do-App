@@ -1,42 +1,64 @@
-# Task Management Script
 
-A simple command-line task management application in Python that allows you to add, view, delete, and mark tasks as complete. This script stores tasks in a text file, making them persistent across sessions.
+# Task Management Web App
+
+A task management application built with Python and Flask that allows users to manage tasks through a single-page web interface. You can add, mark as complete, and delete tasks, all from one page. The application uses SQLite for persistent storage.
 
 ## Features
 
-- **Add Tasks**: Input new tasks to your task list.
-- **View Tasks**: Display all tasks with their completion status.
-- **Delete Tasks**: Remove tasks from your list.
-- **Mark Tasks as Complete**: Update the status of a task to completed.
-- **Save Tasks**: Automatically saves tasks to a text file.
-- **Help Command**: Provides a list of commands and their functions.
+-   **Single-Page Web Interface**: Manage all tasks on a single page—add, mark tasks as complete, and delete tasks easily.
+-   **Add Tasks**: Input new tasks through a form on the same page.
+-   **Mark Complete**: Mark tasks as complete with a single click.
+-   **Delete Tasks**: Remove tasks from the list directly.
+-   **Persistent Storage**: Tasks are stored in an SQLite database to ensure they are saved across sessions.
 
 ## Requirements
 
-- Python 3.x
+-   Python 3.x
+-   Flask
+-   SQLite
 
-## Usage
+## Installation and Setup
 
-1. **Clone the repository** or download the script.
-2. **Run the script** using Python:
-   ```bash
-   python app.py
-   ```
-3. Follow the on-screen prompts to manage your tasks.
+1.  **Clone the repository** or download the project files.
+2.  **Install Flask**:
+    ```
+    `pip install flask` 
+    ```
+3.  **Run the web application**
+    ```
+    `python main.py` 
+    ```
+5.  **Access the app**: Open your browser and go to `http://127.0.0.1:5000` to manage tasks in the web interface.
 
-## Commands
+## Web Interface Overview
 
-- `1`: Add task
-- `2`: View tasks
-- `3`: Delete task
-- `4`: Mark task as complete
-- `5`: Save tasks
-- `6`: Exit the application (saves tasks automatically)
-- `7`: Display help information
+-   **Task List**: The homepage displays a list of tasks with options to add new tasks, delete tasks, or mark tasks as complete, all from one page.
+    -   Example:
+        -   `go shopping` [Mark Complete] [Delete]
+        -   `go to gym` [Mark Complete] [Delete]
+        -   `call madushani` [Mark Complete] [Delete]
+-   **Add Task**: Add new tasks by filling out a form at the top of the page.
+-   **Mark Complete**: Easily mark tasks as complete by clicking the "Mark Complete" button.
+-   **Delete**: Remove a task from the list by clicking "Delete."
 
-## File Storage
+## Database
 
-Tasks are stored in Sqlite database 
+The app uses an SQLite database (`database.db`) to store tasks. The database schema includes fields for task descriptions and completion statuses. The `dbms.py` module handles all database operations, including creating tables, inserting, retrieving, and deleting tasks.
+
+## Folder Structure
+
+```
+├── static/           # Static files (CSS, JS)
+│   ├── css/
+│   └── js/
+├── templates/        # HTML templates
+│   └── index.html
+├── app.py            # Backend logic for task management
+├── main.py           # Flask app entry point
+├── dbms.py           # Database management for SQLite
+├── database.db       # SQLite database file
+└── README.md         # Project documentation
+```
 
 ## Contributing
 
@@ -48,10 +70,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgments
 
-- Inspired by various task management applications.
-- Thank you to the open-source community for their contributions and support.
-```
+-   Inspired by various task management applications.
+-   Special thanks to the open-source community for their contributions and support.
 
-### Instructions to Use:
-- You can modify sections like "Contributing" or "License" based on your preferences or project's requirements.
-- Make sure to adjust the filename in the usage section if your script has a different name.
+----------
+
+This README now removes the `requirements.txt` section and instead provides the command to install Flask manually. Let me know if you'd like any further adjustments!
