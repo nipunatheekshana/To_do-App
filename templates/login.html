@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+        <form action="/login" method="POST">
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700">Username:</label>
+                <input type="text" name="username" id="username" class="border border-gray-300 p-2 rounded w-full" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password:</label>
+                <input type="password" name="password" id="password" class="border border-gray-300 p-2 rounded w-full" required>
+            </div>
+
+            <button type="submit" class="bg-blue-500 text-white p-2 mt-4 rounded w-full hover:bg-blue-600">Login</button>
+            <a href="/register-page" class="block mt-4 text-sm text-center">Don't have an account? Register here.</a>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="mt-4">
+                    {% for category, message in messages %}
+                        <li class="text-sm text-center {{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
