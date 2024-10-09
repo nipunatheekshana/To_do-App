@@ -24,18 +24,18 @@ A task management application built with Python and Flask that allows users to m
 1.  **Clone the repository** or download the project files.
 2.  **Install Flask**: 
     ```
-    pip install flask` 
+    pip install flask
     ```
     
 3.  **Create a `.env` file** based on the `.env.example`:
     -   Copy `.env.example` to `.env` and update any necessary environment variables (e.g., secret keys).
 4.  **Run `keygen.py`** to generate a secure key:
     ```
-    `python keygen.py` 
+    python keygen.py
     ```
 5.  **Run the web application**:
     ```
-    `python main.py` 
+    python main.py
     ```
 6.  **Access the app**: Open your browser and go to `http://127.0.0.1:5000` to manage tasks and user accounts through the web interface.
 
@@ -59,7 +59,7 @@ The app uses an SQLite database (`database.db`) to store tasks and user credenti
 
 ```
 
-`├── static/           # Static files (CSS, JS)
+├── static/           # Static files (CSS, JS)
 │   ├── css/
 │   └── js/
 ├── templates/        # HTML templates (login, register, task management)
